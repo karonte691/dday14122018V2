@@ -1,0 +1,10 @@
+---
+- name: Nginx install
+  apt:
+    name: "nginx"
+    state: latest
+  tags:
+    - skip_ansible_lint
+
+- name: Ensure nginx is started and enabled to start at boot.
+  service: name=nginx state=started enabled=yes
