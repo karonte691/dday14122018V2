@@ -19,3 +19,10 @@ def test_hosts_file(host):
 def test_nginx_is_installed(host):
     nginx = host.package("nginx")
     assert nginx.is_installed
+
+
+def test_nginx_service_is_installed(host):
+    service = host.service("nginx")
+
+    assert service.is_running
+    assert service.is_enabled
